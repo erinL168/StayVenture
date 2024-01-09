@@ -1,0 +1,301 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+  align-items: center;
+  border-bottom: 0.5px solid #ddd;
+  margin-bottom: 10px;
+  width: 100%;
+}
+nav .nav-container {
+  display: flex;
+  gap: 20px;
+  align-items: left;
+}
+
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 3000px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  align-items: flex-start; /* Align items to start within the card */
+}
+
+.top .property-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 250px; /* Initially, show four items per row */
+  height: 400px; /* Fixed height for each card */
+  margin-bottom: 20px; /* Adjust margin between rows */
+  justify-content: space-between; /* Align items within the card */
+  align-items:flex-start; /* Align items to start within the card */
+  padding: 4px 4px 4px 4px;
+  border: 1px solid #ccc; /* Add a solid border */
+  border-radius: 10px; /* Add rounded corners */
+}
+
+.top .property-card p:nth-child(2) {
+  color: #888;
+  font-size: 16px;
+}
+
+.top .property-card a {
+  all: unset;
+}
+
+.top .property-card img {
+  height: 300px;
+  width: 100%; /* Adjust image width to fill the card */
+  border-radius: 10px;
+}
+
+.map {
+  padding: 0px 20px;
+  width: 100%; /* Full width for smaller screens */
+  margin-left: 0; /* Remove the margin for smaller screens */
+  z-index: 0; /* Set z-index of the map to a lower value */
+}
+
+
+/*asked chatgpt how to make it so based on scree width I can have more items in one row or less
+//answer: below and changed .top .property-card with it
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  z-index: 1; 
+}
+/* Credits to Chatgpt, question: how to make my signup and login nicer below corresponding response (background) */
+#myLoginModal,
+#mySignupModal, 
+#myCountrySelect,
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
+}
+
+#myLoginModal .modal-content,
+#myCountrySelect .modal-content {
+  background-color: #fefefe; /* White background for modal content */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the modal content */
+  border: 1px solid #888; /* Border */
+  height: 450px; /* Adjust height as needed */
+  margin: 30px auto; /* Center the modal content vertically and horizontally */
+  width: 30%; /* Width of the modal content */
+}
+
+
+#mySignupModal .modal-content /* Add other modal content classes as needed */ {
+  background-color: #fefefe; /* White background for modal content */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the modal content */
+  border: 1px solid #888; /* Border */
+  height: 700px; /* Adjust height as needed */
+  margin: 30px auto; /* Center the modal content vertically and horizontally */
+  width: 30%; /* Width of the modal content */
+}
+
+#myLoginModal .modal-content h3,
+#myCountrySelect .modal-content h3,
+#mySignupModal .modal-content h3 /* Add other modal content classes as needed */ {
+  text-align: center; /* Center-align the heading */
+  margin-bottom: 30px; /* Bottom margin for the heading */
+}
+
+#myLoginModal .modal-content #login {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+#myLoginModal .modal-content #login,
+#mySignupModal .modal-content #signup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+#myLoginModal .modal-content #login .property-item,
+#mySignupModal .modal-content #signup .property-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#myLoginModal .modal-content #login .property-detail,
+#mySignupModal .modal-content #signup .property-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#myLoginModal .modal-content #login .property-detail span,
+#mySignupModal .modal-content #signup .property-detail span {
+  font-weight: bold; /* Make field labels bold */
+}
+
+#myLoginModal .modal-content #login input[type="text"],
+#myLoginModal .modal-content #login input[type="password"],
+#mySignupModal .modal-content #signup input[type="text"],
+#mySignupModal .modal-content #signup input[type="password"] {
+  border: 1px solid gray;
+  padding: 8px;
+  border-radius: 5px;
+  width: 300px;
+  height: 30px;
+}
+
+#myLoginModal .modal-content #login button[type="submit"],
+#mySignupModal .modal-content #signup button[type="submit"] {
+  all: unset;
+  width: 100px;
+  cursor: pointer;
+  height: 40px;
+  background: #0284c7;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  transition: background 0.3s ease; /* Add transition effect */
+}
+
+#myLoginModal .modal-content #login button[type="submit"]:hover,
+#mySignupModal .modal-content #signup button[type="submit"]:hover {
+  background: #036aa7; /* Change button background on hover */
+}
+.modal .modal-content {
+  background-color: #fefefe;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #888;
+  height: 750px;
+  margin: 30px auto;
+  width: 80%;
+}
+.modal .modal-content h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.modal .modal-content #submit-btn {
+  all: unset;
+  width: 100px;
+  cursor: pointer;
+  height: 30px;
+  background: skyblue;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+}
+.modal .modal-content #submit-btn:hover {
+  background: #0284c7;
+}
+.modal .modal-content .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal .modal-content .close:hover, .modal .modal-content .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal .modal-content #post-property {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+  font-size: 12px;
+  color: #444;
+}
+.modal .modal-content #post-property input {
+  all: unset;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  width: 300px;
+  height: 20px;
+}
+.modal .modal-content #post-property textarea {
+  width: 650px;
+  height: 160px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.modal .modal-content #post-property .property-image {
+  font-weight: bold;
+}
+.modal .modal-content #post-property .property-image input {
+  width: 640px;
+  border: none;
+}
+.modal .modal-content #post-property .property-item {
+  display: flex;
+  gap: 30px;
+}
+.modal .modal-content #post-property .property-item .property-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+button:hover {
+  background: #e5e7eb;
+}
+
+input {
+  all: unset;
+  border: 1px solid gray;
+  padding: 4px;
+  border-radius: 5px;
+}/*# sourceMappingURL=style.css.map */

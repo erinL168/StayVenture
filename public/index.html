@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <script type="text/javascript" src="./js/app.mjs"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div>
+            StayVenture
+        </div>
+       
+        
+        <div class="price-filter-container">
+            <input type="number" id="min-price-input" placeholder="Min Price" min="0">
+            <input type="number" id="max-price-input" placeholder="Max Price" min="0">
+            <button id="price-filter-btn">Filter by Price</button>
+        </div>
+        
+        <div class="nav-container">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search by Country, City or Province">
+                <button id="search-btn">Search</button>
+            </div>
+            <button id="modal-btn">
+                Add New Property
+            </button>
+        </div>
+
+        
+    </nav>
+
+
+    <div class="top" id="properties-container">
+       
+    </div>
+    <div class="mid">
+
+    </div>
+    <div class="bottom">
+
+    </div>
+
+
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>
+                Post your property
+            </h3>
+            <form id="post-property" action="/addProperty" method="post" enctype="multipart/form-data">
+                <div class="property-item">
+                    <div class="property-detail">
+                        <span>Title:</span>
+                        <input type="text" name="title" required/>
+                    </div>
+                </div>
+
+                <div class="property-item">
+                    <div class="property-detail">
+                        <span>Country:</span>
+                        <input type="text" name="country" required/>
+                    </div>
+                    <div class="property-detail">
+                        <label>Province:</label>
+                        <input type="text" name="province" required/>
+                    </div>
+                </div>
+
+                <div class="property-item">
+                    <div class="property-detail">
+                        <label>City:</label>
+                        <input type="text" name="city" required/>
+                    </div>
+                    <div class="property-detail">
+                        <label>Address:</label>
+                        <input type="text" name="address" required/>
+                    </div>
+                </div>
+
+                <div class="property-item">
+                    <div class="property-detail">
+                        <label>Price/per night:</label>
+                        <input type="number" name="price" required/>
+                    </div>
+                    <div class="property-detail">
+                        <label>Postal Code:</label>
+                        <input type="text" name="postCode" required/>
+                    </div>
+                </div>
+
+                <div class="property-item  property-image">
+                    <div class="property-detail">
+                        <label for="image-file">Upload Images:</label>
+                        <input type="file" id="image-file"  accept="image/*" multiple name="property-images" required>
+                    </div>
+                </div>
+
+                <div class="property-item">
+                    <div class="property-detail">
+                        <label>Description:</label>
+                        <textarea type="text" name="desc"></textarea>
+                    </div>
+                  
+                </div>
+
+                <button type="submit" id="submit-btn">Submit</button>
+            </form>
+        
+        </div>
+    </div>
+</body>
+</html>

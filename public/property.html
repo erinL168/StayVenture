@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles/property.css">
+    <script type="text/javascript" src="./js/property.mjs"></script>
+    <title>Property Details</title>
+</head>
+<body>
+    <nav>
+        <a href="http://localhost:3000/">Airbnb</a>
+    </nav>
+
+    <div class="container">
+        <div class="property-details">
+        
+            <div class="property-info">
+                <div class="property-title"></div>
+            
+                <div id="prev-arrow" class="arrow">←</div>
+            
+                <div class="image-container">
+                    <img id="property-image" src="" alt="Property Image" class="property-images"/>
+                </div>
+            
+                <div id="next-arrow" class="arrow">→</div>
+            
+                <!-- Javascript below will fill these details -->
+            </div>
+
+            <div class="property-description">
+                <p class="price"></p>
+                <p class="address"></p>
+                <div>
+                    <p class="desc"></p>
+                    <form id="delete-form" action="#" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button id="delete-btn" type="button">Delete Property</button>
+                    </form>
+                </div>
+               
+            </div>
+
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <div id="comments-container">
+                    <!-- 评论将在这里动态生成 -->
+                </div>
+            </div>
+            
+            <!-- 留言和评分表单 -->
+            <div class="property-comments">
+                <form id="comment-form">
+                    <div class="comment-item">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    
+                    <div class="comment-item">
+                        <label for="rating">Rating:</label>
+                        <input type="number" id="rating" name="rating" min="1" max="5" required>
+                    </div>
+                    <div class="comment-item">  
+                        <label for="message">Comment:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+            
+                  
+            
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+    
+</body>
+</html>

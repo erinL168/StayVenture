@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+  align-items: center;
+  border-bottom: 0.5px solid #ddd;
+  margin-bottom: 10px;
+}
+nav a {
+  all: unset;
+}
+nav a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+nav button:hover {
+  background: #e5e7eb;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: auto;
+  width: 1280px;
+}
+.container .property-info {
+  margin-top: 10px;
+  position: relative;
+}
+.container .property-info .property-title {
+  font-size: 36px;
+  font-weight: lighter;
+  margin-bottom: 10px;
+}
+.container .property-info .property-images {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .property-info #prev-arrow {
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  font-size: 30px;
+  border: 1px solid black;
+  padding: 3px;
+  cursor: pointer;
+}
+.container .property-info #next-arrow {
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  font-size: 30px;
+  border: 1px solid black;
+  padding: 3px;
+  cursor: pointer;
+}
+.container .property-description {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  gap: 10px;
+  border-bottom: 0.5px solid gray;
+}
+.container .property-description .price {
+  font-size: 18px;
+}
+.container .property-description .address, .container .property-description .desc {
+  color: #666;
+  font-size: 16px;
+}
+.container .property-description div {
+  display: flex;
+  justify-content: space-between;
+}
+.container .property-description div button {
+  all: unset;
+  border: 1px solid #666;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+}
+.container .property-description div button:hover {
+  background: #dc2626;
+}
+.container .comments-section #comments-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container .comments-section #comments-container p {
+  padding-top: 5px;
+}
+.container .comments-section #comments-container .comments-username {
+  font-weight: 500;
+  font-size: 18px;
+}
+.container .comments-section #comments-container .comments-message {
+  color: #666;
+}
+.container .property-comments input, .container .property-comments textarea {
+  all: unset;
+  border: 1px solid gray;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  width: 100%;
+}
+.container .property-comments #comment-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+.container .property-comments #comment-form label {
+  font-size: 18px;
+}
+.container .property-comments #comment-form button {
+  width: 160px;
+  height: 40px;
+  cursor: pointer;
+}
+.container .property-comments #comment-form .comment-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}/*# sourceMappingURL=property.css.map */
